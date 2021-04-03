@@ -21,21 +21,21 @@ namespace BusinessLookupClient.Models
       return response.Content;
     }
 
-    public static async Task Post(string newShop)
+    public static async Task Post(string newRestaurant)
     {
       RestClient client = new RestClient("http://localhost:5000/");
       RestRequest request = new RestRequest($"shops", Method.POST);
       request.AddHeader("Content-Type", "application/json");
-      request.AddJsonBody(newShop);
+      request.AddJsonBody(newRestaurant);
       var response = await client.ExecuteTaskAsync(request);
     }
 
-    public static async Task Put(int id, string newShop)
+    public static async Task Put(int id, string newRestaurant)
     {
       RestClient client = new RestClient("http://localhost:5000/");
       RestRequest request = new RestRequest($"shops/{id}", Method.PUT);
       request.AddHeader("Content-Type", "application/json");
-      request.AddJsonBody(newShop);
+      request.AddJsonBody(newRestaurant);
       var response = await client.ExecuteTaskAsync(request);
     }
 

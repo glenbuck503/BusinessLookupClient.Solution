@@ -1,0 +1,33 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>New Restaurant:</h1>
+
+<form action="/shops" method="post">
+    <label for="name">Restaurantes's Name</label>
+    <input id="name" name="name" type="text">
+    <label for="food">Food</label>
+    <input id="food" name="food" type="text">
+    <label for="number">restaurnts's number</label>
+    <input id="number" name="number" type="text">
+
+    <button type="submit">Go!</button>
+</form>
+
+<h1>All Restaurants:</h1>
+
+<ol>
+    @foreach (Restaurant restaurant in Model)
+    {
+        <ul>
+            <li>ID: @restaurant.RestaurantId</li>
+            <li>Name: @restaurant.Name</li>
+            <li>Food: @restaurant.Food</li>
+            <li>Number: @restaurant.Number</li>
+
+        </ul>
+
+        <br>
+    }
+</ol>
